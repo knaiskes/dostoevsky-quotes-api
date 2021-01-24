@@ -37,7 +37,7 @@ class Quote(models.Model):
         (THE_BROTHERS_KARAMAZOV, 'The Brothers Karamazon'),
     ]
 
-    text = models.CharField(max_length=120)
+    text = models.CharField(max_length=120, unique=True)
     novel = models.CharField(max_length=28, choices=NOVEL_LIST_CHOICES)
 
     def __str__(self):
