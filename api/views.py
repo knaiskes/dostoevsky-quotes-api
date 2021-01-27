@@ -2,6 +2,8 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.generics import ListAPIView
 
 from .models import Quote
 from .serializers import QuoteSerializer
@@ -26,3 +28,9 @@ def quote_by_id(request, pk):
      if request.method == 'GET':
          serializer = QuoteSerializer(quote)
          return Response(serializer.data)
+
+
+class ApiQuoteListView(ListAPIView):
+    queryset = Quote.objects.all()
+    serializer_class = QuoteSerializer
+    pagination_class = PageNumberPagination
