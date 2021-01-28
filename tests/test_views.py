@@ -40,3 +40,26 @@ class GetQuoteById(APITestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+class GetQuotesByNovel(APITestCase):
+    def setUp(self):
+        self.client = APIClient()
+        Quote.objects.create(text='test1', novel='test')
+        Quote.objects.create(text='test2', novel='test')
+        Quote.objects.create(text='test3', novel='test')
+        Quote.objects.create(text='test4', novel='test')
+        Quote.objects.create(text='test5', novel='test')
+        Quote.objects.create(text='test6', novel='test')
+        Quote.objects.create(text='test7', novel='test')
+        Quote.objects.create(text='test8', novel='test')
+        Quote.objects.create(text='test9', novel='test')
+
+    def test_get_valid_quotes_by_novel(self):
+        import json
+        url = reverse('api:quotes_by_novel', kwargs={'novel': 'test'})
+        response = self.client.get(url)
+        quotes = Quote.objects.all()
+        serializer = QuoteSerializer(quotes, many=True)
+
+        self.assertEqual(response.data['results'], serializer.data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
