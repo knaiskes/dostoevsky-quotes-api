@@ -31,6 +31,15 @@ def quote_by_id(request, pk):
 
 
 class ApiQuoteListView(ListAPIView):
-    queryset = Quote.objects.all()
     serializer_class = QuoteSerializer
-    pagination_class = PageNumberPagination
+    #pagination_class = PageNumberPagination
+
+    def get_queryset(self):
+        return Quote.objects.all()
+
+class ApiQuoteListByNovelView(ListAPIView):
+    serializer_class = QuoteSerializer
+    #pagination_class = PageNumberPagination
+
+    def get_queryset(self):
+        return Quote.objects.filter(novel=self.kwargs['novel'])
