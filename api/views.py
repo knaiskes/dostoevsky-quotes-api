@@ -9,7 +9,7 @@ from .models import Quote
 from .serializers import QuoteSerializer
 
 @api_view(['GET'])
-def quote(request):
+def random(request):
     if request.method == 'GET':
         from random import choice
         pks = Quote.objects.values_list('pk', flat=True)

@@ -12,7 +12,7 @@ class GetSingleRandomQuote(APITestCase):
         Quote.objects.create(text='test', novel='test')
 
     def test_get_single_random_quote(self):
-        url = reverse('api:quote')
+        url = reverse('api:random')
         quote = Quote.objects.get(id=1)
         serializer = QuoteSerializer(quote)
         response = self.client.get(url, format='json')
