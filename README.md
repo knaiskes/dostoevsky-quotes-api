@@ -51,9 +51,7 @@ Now you can login to admin dashboard at [http://localhost:8000/admin/](http://lo
 
 ## API Routes
 
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
 
 <colgroup>
 <col  class="org-left" />
@@ -92,7 +90,7 @@ Now you can login to admin dashboard at [http://localhost:8000/admin/](http://lo
 
 <tr>
 <td class="org-left">quotes/</td>
-<td class="org-left"><pk></td>
+<td class="org-left">pk</td>
 <td class="org-left">GET</td>
 <td class="org-left">Single quote based on the given id</td>
 </tr>
@@ -100,7 +98,7 @@ Now you can login to admin dashboard at [http://localhost:8000/admin/](http://lo
 
 <tr>
 <td class="org-left">quotes/novel/</td>
-<td class="org-left"><novel></td>
+<td class="org-left">novel</td>
 <td class="org-left">GET</td>
 <td class="org-left">All quotes based on the given novel (paginated)</td>
 </tr>
