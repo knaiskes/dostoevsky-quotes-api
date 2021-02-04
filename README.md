@@ -47,3 +47,62 @@ $ python manage.py runserver
 ```
 
 Now you can login to admin dashboard at [http://localhost:8000/admin/](http://localhost:8000/admin/)
+
+
+## API Routes
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Path</th>
+<th scope="col" class="org-left">Parameter</th>
+<th scope="col" class="org-left">Request Method</th>
+<th scope="col" class="org-left">Data</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="org-left">quotes/</td>
+<td class="org-left">None</td>
+<td class="org-left">GET</td>
+<td class="org-left">All available quotes (paginated)</td>
+</tr>
+
+
+<tr>
+<td class="org-left">quotes/random</td>
+<td class="org-left">None</td>
+<td class="org-left">GET</td>
+<td class="org-left">A single random quote</td>
+</tr>
+
+
+<tr>
+<td class="org-left">quotes/</td>
+<td class="org-left"><pk></td>
+<td class="org-left">GET</td>
+<td class="org-left">Single quote based on the given id</td>
+</tr>
+
+
+<tr>
+<td class="org-left">quotes/novel/</td>
+<td class="org-left"><novel></td>
+<td class="org-left">GET</td>
+<td class="org-left">All quotes based on the given novel (paginated)</td>
+</tr>
+</tbody>
+</table>
