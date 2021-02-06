@@ -37,7 +37,7 @@ class Quote(models.Model):
     (POOR_FOLK, 'Poor Folk'),
     ]
 
-    text = models.CharField(max_length=120, unique=True)
+    text = models.CharField(max_length=300, unique=True)
     novel = models.CharField(max_length=28, choices=NOVEL_LIST_CHOICES)
 
     def __str__(self):
