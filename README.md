@@ -1,4 +1,8 @@
 # dostoevsky-quotes-api
+A platform to share quotes from Dostoevsky novels
+
+## Demo video
+![Video](https://youtu.be/uc_NT4onxnA)
 
 # Requirements
 
