@@ -2,7 +2,7 @@
 A platform to share quotes from Dostoevsky novels
 
 ## Demo video
-![Video](https://youtu.be/uc_NT4onxnA)
+[![Video](https://i.ytimg.com/vi/uc_NT4onxnA/hqdefault.jpg)](https://youtu.be/uc_NT4onxnA)
 
 # Requirements
 
